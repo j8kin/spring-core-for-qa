@@ -1,7 +1,7 @@
 package com.acme.banking.dbo.ooad.account;
 
 public class SavingAccount extends Account {
-    SavingAccount() {
+    public SavingAccount() {
         this.overdraft = 0.0;
     }
 }

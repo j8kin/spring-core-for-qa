@@ -1,5 +1,9 @@
 package com.acme.banking.dbo.ooad;
 
+import com.acme.banking.dbo.ooad.account.Account;
+import com.acme.banking.dbo.ooad.repository.IAccountRepository;
+import com.acme.banking.dbo.ooad.xService.XchangeService;
+
 import java.util.Collection;
 
 class ReportingService {

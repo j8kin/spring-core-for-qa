@@ -1,9 +1,11 @@
-package com.acme.banking.dbo.ooad;
+package com.acme.banking.dbo.ooad.repository;
+
+import com.acme.banking.dbo.ooad.account.Account;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-class AccountRepository implements IAccountRepository {
+public class AccountRepository implements IAccountRepository {
     private Collection<Account> accounts = new ArrayList<>();
     public void addAccount(Account account) {
         accounts.add(account);

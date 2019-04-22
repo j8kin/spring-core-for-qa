@@ -17,7 +17,7 @@ class ReportingService {
 
     Collection<Account> getAllAccountsInUsd() {
         Collection<Account> acc = repo.getAllAccounts();
-        acc.forEach(a->a.setAmount(a.getAmount()/ xchangeService.getRate()));
+        acc.forEach(a->a.setAmount(a.getAmount()/ xchangeService.getRateInUSD()));
         return acc;
     }
 }

@@ -8,7 +8,7 @@ public class NostalgicExchangeService implements XchangeService {
     }
 
     @Override
-    public double getRate() {
+    public double getRateInUSD() {
         return rate;
     }
 }

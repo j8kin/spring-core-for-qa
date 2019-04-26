@@ -1,6 +1,6 @@
-package com.acme.banking.dbo.spring.service;
+package com.acme.banking.dbo.spring_orig.service;
 
-import com.acme.banking.dbo.spring.dao.IAccountRepository;
+import com.acme.banking.dbo.spring_orig.dao.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +11,10 @@ import javax.annotation.Resource;
 @Service
 public class ReportingService {
     @Autowired(required = false)
-    private ICurrencyService currencyService;
+    private CurrencyService currencyService;
 
-    @Resource
-    /** Like @Autowired but with JNDI support */
-    private IAccountRepository accountRepository;
+    @Resource /** Like @Autowired but with JNDI support */
+    private AccountRepository accountRepository;
 
     @PostConstruct
     public void onCreate() {
@@ -31,10 +30,4 @@ public class ReportingService {
         double rurAmount = accountRepository.findById(accountId).get().getAmount();
         return currencyService.getUsdRateForRur() * rurAmount;
     }
-
-//    Collection<Account> getAllAccountsInUsd() {
-//        Collection<Account> acc = repo.getAllAccounts();
-//        acc.forEach(a->a.setAmount(a.getAmount()/ xchangeService.getRateInUSD()));
-//        return acc;
-//    }
 }

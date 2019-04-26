@@ -1,32 +1,35 @@
 package com.acme.banking.dbo.spring.domain;
 
-import org.springframework.validation.annotation.Validated;
-
-import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Size;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
 
 @Entity
 @Inheritance
 @DiscriminatorColumn(name="ACCOUNT_TYPE")
 public abstract class Account {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private long id;
-    private double amount;
-    @Email @Size(max = 50) private String email;
+    double overdraft = 0.0;
+    protected double amount;
 
-    public Account() {
-    }
-
-    public Account(double amount, String email) {
-        this.amount = amount;
-        this.email = email;
-    }
-
-    public long getId() {
-        return id;
+    public void setAmount(double newAmount) {
+        this.amount = newAmount;
     }
 
     public double getAmount() {
         return amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount < this.amount + this.overdraft) {
+            this.amount -= amount;
+        }
+    }
+
+    public void addAmount(double amount) {
+        this.amount += amount;
+    }
+
+    public double getOverdraft() {
+        return overdraft;
     }
 }

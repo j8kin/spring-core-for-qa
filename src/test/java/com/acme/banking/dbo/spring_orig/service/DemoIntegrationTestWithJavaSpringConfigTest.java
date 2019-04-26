@@ -1,7 +1,7 @@
-package com.acme.banking.dbo.spring.service;
+package com.acme.banking.dbo.spring_orig.service;
 
-import com.acme.banking.dbo.spring.dao.AccountRepository;
-import com.acme.banking.dbo.spring.domain.Account;
+import com.acme.banking.dbo.spring_orig.dao.AccountRepository;
+import com.acme.banking.dbo.spring_orig.domain.Account;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

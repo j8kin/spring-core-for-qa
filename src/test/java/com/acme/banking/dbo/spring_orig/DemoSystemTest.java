@@ -1,10 +1,9 @@
-package com.acme.banking.dbo.spring;
+package com.acme.banking.dbo.spring_orig;
 
-import com.acme.banking.dbo.spring.dao.AccountRepository;
-import com.acme.banking.dbo.spring.domain.CheckingAccount;
-import com.acme.banking.dbo.spring.service.CurrencyService;
-import com.acme.banking.dbo.spring.service.ReportingService;
-import org.junit.Ignore;
+import com.acme.banking.dbo.spring_orig.dao.AccountRepository;
+import com.acme.banking.dbo.spring_orig.domain.CheckingAccount;
+import com.acme.banking.dbo.spring_orig.service.CurrencyService;
+import com.acme.banking.dbo.spring_orig.service.ReportingService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
